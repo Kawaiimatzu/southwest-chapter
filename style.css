@@ -1,0 +1,1075 @@
+
+/* ==========================================
+   SOUTHWEST CHAPTER
+   GLOBAL STYLES
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #071426;
+    --navy-light: #10243c;
+    --orange: #f15a24;
+    --green: #a8ce48;
+    --white: #ffffff;
+    --muted: #c4cfda;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #14243a;
+    overflow-x: hidden;
+    background: var(--navy);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ==========================================
+   TOP INFORMATION BAR
+========================================== */
+
+.top-bar {
+    height: 38px;
+    width: 100%;
+    background: var(--navy);
+    color: var(--white);
+    position: relative;
+    z-index: 110;
+}
+
+.top-container {
+    width: min(1240px, 92%);
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-container p {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .4px;
+}
+
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.top-right span {
+    color: var(--green);
+    letter-spacing: 1px;
+}
+
+.top-right a {
+    color: var(--white);
+    transition: color .3s ease;
+}
+
+.top-right a:hover {
+    color: var(--orange);
+}
+
+
+/* ==========================================
+   MAIN HEADER
+========================================== */
+
+.main-header {
+    width: 100%;
+    height: 100px;
+    background: var(--white);
+
+    position: relative;
+    z-index: 100;
+
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .06);
+}
+
+.nav-container {
+    width: min(1240px, 92%);
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 235px;
+    max-height: 82px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* NAVIGATION */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 29px;
+}
+
+.navigation a {
+    position: relative;
+
+    color: #14243a;
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: color .3s ease;
+}
+
+.navigation a:not(.nav-button)::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--orange);
+
+    transition: width .3s ease;
+}
+
+.navigation a:not(.nav-button):hover::after,
+.navigation a.active::after {
+    width: 100%;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: var(--orange);
+}
+
+
+/* JOIN BUTTON */
+
+.navigation .nav-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    background: var(--orange);
+    color: var(--white);
+
+    padding: 15px 23px;
+    border-radius: 5px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    transition: .3s ease;
+}
+
+.navigation .nav-button:hover {
+    background: #d94718;
+    transform: translateY(-2px);
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.menu-toggle {
+    display: none;
+
+    padding: 8px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 27px;
+    height: 3px;
+
+    margin: 5px 0;
+
+    background: var(--navy);
+    border-radius: 5px;
+}
+
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.earth-hero {
+    width: 100%;
+    height: 680px;
+    min-height: 680px;
+
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            ellipse at 75% 45%,
+            #173d64 0%,
+            transparent 42%
+        ),
+        linear-gradient(
+            120deg,
+            #071426,
+            #10243c 65%,
+            #071426
+        );
+}
+
+
+/* THREE.JS CANVAS CONTAINER */
+
+#earth-experience {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#earth-canvas {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+    outline: none;
+}
+
+
+/* CINEMATIC OVERLAY */
+
+.earth-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 17, 32, .97) 0%,
+            rgba(5, 17, 32, .90) 33%,
+            rgba(5, 17, 32, .38) 68%,
+            rgba(5, 17, 32, .15) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(5, 17, 32, .65),
+            transparent 35%,
+            transparent 75%,
+            rgba(5, 17, 32, .25)
+        );
+
+    transition: background 1.5s ease;
+}
+
+
+/* REGION FOCUSED OVERLAY */
+
+.earth-hero.region-focused .earth-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 17, 32, .97) 0%,
+            rgba(5, 17, 32, .88) 30%,
+            rgba(5, 17, 32, .24) 70%,
+            rgba(5, 17, 32, .12) 100%
+        );
+}
+
+
+/* ==========================================
+   HERO CONTENT
+========================================== */
+
+.earth-hero .hero-content {
+    position: relative;
+    z-index: 3;
+
+    width: min(1240px, 92%);
+    height: 100%;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 20px;
+
+    padding: 50px 0;
+}
+
+
+/* HERO TEXT */
+
+.earth-hero .hero-text {
+    max-width: 620px;
+    position: relative;
+    z-index: 4;
+}
+
+
+/* HERO LABEL */
+
+.earth-hero .hero-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--green);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 25px;
+}
+
+.earth-hero .hero-label span {
+    display: block;
+
+    width: 35px;
+    height: 3px;
+
+    background: var(--orange);
+}
+
+
+/* HERO HEADING */
+
+.earth-hero .hero-content h1 {
+    color: var(--white);
+
+    font-size: clamp(40px, 4.6vw, 65px);
+    line-height: 1.15;
+
+    font-weight: 800;
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.earth-hero .hero-content h1 span {
+    color: var(--orange);
+}
+
+
+/* DESCRIPTION */
+
+.earth-hero .hero-description {
+    max-width: 520px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.9;
+    font-weight: 400;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==========================================
+   HERO BUTTONS
+========================================== */
+
+.earth-hero .hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+
+/* PRIMARY BUTTON */
+
+.earth-hero .primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    background: var(--green);
+    color: var(--navy);
+
+    padding: 17px 24px;
+
+    border-radius: 4px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .6px;
+
+    transition: .3s ease;
+}
+
+.earth-hero .primary-button:hover {
+    background: var(--white);
+    transform: translateY(-3px);
+}
+
+
+/* SECONDARY BUTTON */
+
+.earth-hero .secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, .4);
+
+    color: var(--white);
+
+    padding: 16px 21px;
+
+    border-radius: 4px;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+
+    transition: .3s ease;
+}
+
+.earth-hero .secondary-button:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+}
+
+
+/* HERO BOTTOM */
+
+.earth-hero .hero-bottom {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 65px;
+}
+
+.earth-hero .hero-line {
+    width: 45px;
+    height: 2px;
+
+    background: var(--green);
+}
+
+.earth-hero .hero-bottom p {
+    color: #8e9eaf;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* ==========================================
+   EARTH INTERACTION AREA
+========================================== */
+
+.earth-interaction {
+    position: relative;
+
+    height: 520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* EARTH HINT */
+
+.earth-hint {
+    position: absolute;
+
+    top: 35px;
+    right: 10px;
+
+    z-index: 5;
+
+    color: #c4d6eb;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+
+    opacity: 0;
+
+    transition: opacity 1s ease;
+}
+
+.earth-hint.hint-visible {
+    opacity: .9;
+}
+
+.hint-dot {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 9px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow: 0 0 12px var(--green);
+
+    animation: earthHintPulse 1.5s infinite;
+}
+
+@keyframes earthHintPulse {
+    50% {
+        opacity: .35;
+    }
+}
+
+
+/* ==========================================
+   SOUTHWEST LOCATION LABEL
+========================================== */
+
+.earth-region-label {
+    position: absolute;
+
+    bottom: 65px;
+    right: 0;
+
+    z-index: 6;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px 21px;
+
+    border: 1px solid rgba(168, 206, 72, .45);
+
+    background: rgba(10, 29, 49, .88);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-radius: 8px;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: .8s ease;
+
+    pointer-events: none;
+}
+
+.earth-region-label.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* LOCATION PIN */
+
+.region-pin {
+    width: 10px;
+    height: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+
+    box-shadow: 0 0 15px var(--orange);
+}
+
+
+/* LOCATION TEXT */
+
+.earth-region-label strong {
+    display: block;
+
+    color: var(--white);
+
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.earth-region-label small {
+    display: block;
+
+    color: var(--green);
+
+    font-size: 9px;
+    letter-spacing: 1.5px;
+
+    margin-top: 5px;
+}
+
+
+/* ==========================================
+   SOUTHWEST FLORIDA MAP CARD
+========================================== */
+
+.southwest-map-card {
+    position: absolute;
+
+    top: 50%;
+    right: 0;
+
+    width: 340px;
+
+    padding: 18px;
+
+    background: rgba(12, 34, 55, .90);
+
+    border: 1px solid rgba(168, 206, 72, .35);
+
+    border-radius: 12px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+
+    opacity: 0;
+
+    transform: translate(25px, -40%);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+.southwest-map-card.visible {
+    opacity: 1;
+    transform: translate(0, -40%);
+}
+
+
+/* MAP CARD HEADING */
+
+.map-card-heading span {
+    display: block;
+
+    color: var(--green);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+}
+
+.map-card-heading strong {
+    display: block;
+
+    color: var(--white);
+
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+
+/* REGIONAL MAP */
+
+.regional-map {
+    display: block;
+
+    width: 100%;
+
+    margin: 12px 0;
+
+    overflow: visible;
+}
+
+
+/* MAP DESCRIPTION */
+
+.southwest-map-card > p {
+    color: #b7c6d5;
+
+    font-size: 8px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   EARTH CONTROL BUTTON
+========================================== */
+
+.earth-control {
+    position: absolute;
+
+    bottom: 8px;
+    right: 0;
+
+    z-index: 7;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 17px;
+
+    color: var(--white);
+
+    background: rgba(255, 255, 255, .08);
+
+    border: 1px solid rgba(255, 255, 255, .25);
+
+    border-radius: 4px;
+
+    font-family: inherit;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.earth-control:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+
+/* ==========================================
+   BOTTOM HERO ACCENT
+========================================== */
+
+.earth-bottom-line {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    z-index: 8;
+
+    width: 100%;
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        var(--green) 0%,
+        var(--green) 35%,
+        var(--orange) 35%,
+        var(--orange) 70%,
+        #ffb52e 70%
+    );
+}
+
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .navigation {
+        gap: 17px;
+    }
+
+    .navigation a {
+        font-size: 11px;
+    }
+
+    .logo img {
+        width: 190px;
+    }
+
+    .earth-hero .hero-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .earth-hero .hero-content h1 {
+        font-size: 46px;
+    }
+
+    .southwest-map-card {
+        width: 280px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE HEADER
+========================================== */
+
+@media (max-width: 768px) {
+
+    .top-bar {
+        height: auto;
+        min-height: 38px;
+    }
+
+    .top-container {
+        width: 90%;
+        padding: 10px 0;
+    }
+
+    .top-container p {
+        font-size: 9px;
+    }
+
+    .top-right {
+        gap: 10px;
+        font-size: 9px;
+    }
+
+    .main-header {
+        height: 85px;
+    }
+
+    .nav-container {
+        width: 90%;
+    }
+
+    .logo img {
+        width: 190px;
+        max-height: 72px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* MOBILE NAVIGATION */
+
+    .navigation {
+        display: none;
+
+        position: absolute;
+
+        top: 85px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 15px 5% 25px;
+
+        background: var(--white);
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+    }
+
+    .navigation.show {
+        display: flex;
+    }
+
+    .navigation a {
+        padding: 14px 5px;
+        font-size: 13px;
+    }
+
+    .navigation .nav-button {
+        justify-content: center;
+        margin-top: 12px;
+    }
+
+    .navigation a:not(.nav-button)::after {
+        display: none;
+    }
+
+
+    /* MOBILE HERO */
+
+    .earth-hero {
+        height: auto;
+        min-height: 950px;
+    }
+
+    .earth-hero .hero-content {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        align-content: center;
+
+        padding: 65px 0 40px;
+
+        gap: 0;
+    }
+
+    .earth-hero .hero-text {
+        padding-top: 20px;
+    }
+
+    .earth-hero .hero-content h1 {
+        font-size: clamp(36px, 8vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .earth-hero .hero-label {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .earth-hero .hero-description {
+        font-size: 13px;
+    }
+
+    .earth-hero .hero-actions {
+        gap: 12px;
+    }
+
+    .earth-hero .hero-bottom {
+        margin-top: 45px;
+    }
+
+
+    /* MOBILE EARTH */
+
+    .earth-interaction {
+        height: 430px;
+        margin-top: 15px;
+    }
+
+    .earth-hint {
+        top: 5px;
+        right: 5px;
+    }
+
+    .earth-region-label {
+        bottom: 45px;
+        right: 0;
+    }
+
+
+    /* MOBILE MAP CARD */
+
+    .southwest-map-card {
+        width: min(290px, 85%);
+
+        top: 48%;
+        right: 50%;
+
+        transform: translate(50%, -35%);
+    }
+
+    .southwest-map-card.visible {
+        transform: translate(50%, -35%);
+    }
+
+
+    /* MOBILE CONTROL */
+
+    .earth-control {
+        right: 50%;
+        bottom: 0;
+
+        transform: translateX(50%);
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE SCREENS
+========================================== */
+
+@media (max-width: 420px) {
+
+    .top-right span {
+        display: none;
+    }
+
+    .logo img {
+        width: 165px;
+    }
+
+    .earth-hero .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .earth-hero .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .earth-hero .hero-actions a {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .earth-interaction {
+        height: 390px;
+    }
+
+}
+
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+    .earth-hint,
+    .earth-region-label,
+    .southwest-map-card {
+        transition: none !important;
+    }
+
+}

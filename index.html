@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Welcome to the Southwest Chapter of the Florida Association of Mortgage Professionals. Building connections and empowering mortgage professionals.">
+
+    <meta name="theme-color" content="#071426">
+
+    <title>Southwest Chapter | FAMP</title>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <!-- ==========================================
+         TOP INFORMATION BAR
+    =========================================== -->
+
+    <div class="top-bar">
+
+        <div class="top-container">
+
+            <p>
+                Florida Association of Mortgage Professionals
+            </p>
+
+            <div class="top-right">
+
+                <span>SOUTHWEST CHAPTER</span>
+
+                <a href="contact/index.html">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         MAIN WEBSITE HEADER
+    =========================================== -->
+
+    <header class="main-header">
+
+        <div class="nav-container">
+
+
+            <!-- CHAPTER LOGO -->
+
+            <a href="index.html" class="logo">
+
+                <img
+                    src="assets/images/logo.png"
+                    alt="Southwest Chapter Logo">
+
+            </a>
+
+
+
+            <!-- MOBILE NAVIGATION BUTTON -->
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navigation">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+
+            <!-- MAIN NAVIGATION -->
+
+            <nav class="navigation" id="navigation">
+
+                <a href="#" class="active">
+                    Home
+                </a>
+
+                <a href="../about/about.html">
+                    About
+                </a>
+
+                <a href="../membership/membership.html">
+                    Membership
+                </a>
+
+                <a href="../events/events.html">
+                    Events
+                </a>
+
+                <a href="../advocacy/advocacy.html">
+                    Advocacy
+                </a>
+
+                <a href="../resources/resources.html">
+                    Resources
+                </a>
+
+                <a href="../contact/contact.html">
+                    Contact
+                </a>
+
+                <a
+                    href="https://members.ourfamp.org/applicationtojoin"
+                    class="nav-button">
+
+                    JOIN NOW <span>↗</span>
+
+                </a>
+
+            </nav>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         MAIN WEBSITE CONTENT
+    =========================================== -->
+
+    <main>
+
+
+        <!-- ======================================
+             SOUTHWEST CHAPTER HERO SECTION
+        ======================================= -->
+
+        <section class="hero earth-hero">
+
+
+            <!-- THREE.JS EARTH EXPERIENCE -->
+
+            <div id="earth-experience">
+
+                <canvas
+                    id="earth-canvas"
+                    aria-label="Interactive 3D Earth. Click to explore Southwest Florida."
+                    role="img">
+                </canvas>
+
+            </div>
+
+
+
+            <!-- CINEMATIC BACKGROUND OVERLAY -->
+
+            <div class="earth-overlay"></div>
+
+
+
+            <!-- BACKGROUND PATTERN -->
+
+            <div class="hero-pattern"></div>
+
+
+
+            <!-- ==================================
+                 HERO CONTENT CONTAINER
+            =================================== -->
+
+            <div class="hero-content">
+
+
+
+                <!-- LEFT SIDE: HERO TEXT -->
+
+                <div class="hero-text">
+
+
+
+                    <!-- SECTION LABEL -->
+
+                    <div class="hero-label">
+
+                        <span></span>
+
+                        FLORIDA ASSOCIATION OF MORTGAGE PROFESSIONALS
+
+                    </div>
+
+
+
+                    <!-- MAIN HEADLINE -->
+
+                    <h1>
+
+                        Stronger Together.<br>
+
+                        <span>Moving Forward.</span>
+
+                    </h1>
+
+
+
+                    <!-- DESCRIPTION -->
+
+                    <p class="hero-description">
+
+                        Welcome to the Southwest Chapter of FAMP.
+
+                        Connecting mortgage professionals, building
+                        relationships, and creating opportunities
+                        for a stronger industry.
+
+                    </p>
+
+
+
+                    <!-- CALL TO ACTION BUTTONS -->
+
+                    <div class="hero-actions">
+
+
+
+                        <a
+                            href="membership/index.html"
+                            class="primary-button">
+
+                            BECOME A MEMBER
+
+                            <span>→</span>
+
+                        </a>
+
+
+
+                        <a
+                            href="about/index.html"
+                            class="secondary-button">
+
+                            DISCOVER OUR CHAPTER
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <!-- HERO BOTTOM INFORMATION -->
+
+                    <div class="hero-bottom">
+
+                        <div class="hero-line"></div>
+
+                        <p>
+                            PROFESSIONALISM. CONNECTION. GROWTH.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- ==================================
+                     RIGHT SIDE: INTERACTIVE EARTH
+                =================================== -->
+
+                <div class="earth-interaction">
+
+
+
+                    <!-- EARTH INTERACTION HINT -->
+
+                    <div
+                        class="earth-hint"
+                        id="earthHint">
+
+                        <span class="hint-dot"></span>
+
+                        CLICK THE EARTH TO EXPLORE
+
+                    </div>
+
+
+
+                    <!-- SOUTHWEST CHAPTER LOCATION LABEL -->
+
+                    <div
+                        class="earth-region-label"
+                        id="regionLabel">
+
+                        <span class="region-pin"></span>
+
+                        <div>
+
+                            <strong>
+                                SOUTHWEST CHAPTER
+                            </strong>
+
+                            <small>
+                                SOUTHWEST FLORIDA
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         SOUTHWEST FLORIDA MAP CARD
+                    =================================== -->
+
+                    <div
+                        class="southwest-map-card"
+                        id="southwestMapCard">
+
+
+
+                        <div class="map-card-heading">
+
+                            <span>
+                                REGIONAL LOCATION
+                            </span>
+
+                            <strong>
+                                SOUTHWEST FLORIDA
+                            </strong>
+
+                        </div>
+
+
+
+                        <!-- REGIONAL MAP ILLUSTRATION -->
+
+                        <svg
+                            viewBox="0 0 340 210"
+                            class="regional-map"
+                            xmlns="http://www.w3.org/2000/svg">
+
+
+                            <defs>
+
+                                <linearGradient
+                                    id="regionFill"
+                                    x1="0"
+                                    y1="0"
+                                    x2="1"
+                                    y2="1">
+
+                                    <stop
+                                        offset="0%"
+                                        stop-color="#a8ce48"/>
+
+                                    <stop
+                                        offset="100%"
+                                        stop-color="#4e963b"/>
+
+                                </linearGradient>
+
+                            </defs>
+
+
+
+                            <!-- REGION SHAPE -->
+
+                            <path
+                                d="
+                                M38 24
+                                L245 24
+                                L265 60
+                                L282 95
+                                L290 130
+                                L270 160
+                                L240 178
+                                L205 170
+                                L178 151
+                                L145 143
+                                L110 125
+                                L78 100
+                                L48 65
+                                Z
+                                "
+                                fill="url(#regionFill)"
+                                stroke="#d9f5a1"
+                                stroke-width="2"
+                            />
+
+
+
+                            <!-- REGION DETAILS -->
+
+                            <path
+                                d="
+                                M110 125
+                                L145 143
+                                L178 151
+                                L205 170
+                                L240 178
+                                L270 160
+                                "
+                                fill="none"
+                                stroke="#ffffff"
+                                stroke-opacity=".65"
+                                stroke-width="1.5"
+                                stroke-dasharray="4 5"
+                            />
+
+
+
+                            <!-- LOCATION MARKER -->
+
+                            <circle
+                                cx="205"
+                                cy="150"
+                                r="12"
+                                fill="#f15a24"
+                                opacity=".25"
+                            />
+
+                            <circle
+                                cx="205"
+                                cy="150"
+                                r="5"
+                                fill="#f15a24"
+                                stroke="white"
+                                stroke-width="2"
+                            />
+
+
+
+                            <!-- LOCATION MARKER LABEL -->
+
+                            <path
+                                d="M205 145 L205 116 L230 116"
+                                fill="none"
+                                stroke="#ffffff"
+                                stroke-width="1.5"
+                            />
+
+                            <text
+                                x="235"
+                                y="119"
+                                fill="white"
+                                font-size="10"
+                                font-weight="bold">
+
+                                SOUTHWEST
+
+                            </text>
+
+                            <text
+                                x="235"
+                                y="132"
+                                fill="#a8ce48"
+                                font-size="9">
+
+                                CHAPTER
+
+                            </text>
+
+
+                        </svg>
+
+
+
+                        <!-- MAP DESCRIPTION -->
+
+                        <p>
+                            CONNECTING MORTGAGE PROFESSIONALS
+                            ACROSS SOUTHWEST FLORIDA
+                        </p>
+
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         EARTH INTERACTION CONTROL
+                    =================================== -->
+
+                    <button
+                        class="earth-control"
+                        id="earthControl"
+                        type="button">
+
+                        <span id="earthControlText">
+                            VIEW GLOBAL EARTH
+                        </span>
+
+                        <span>↗</span>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- BOTTOM HERO ACCENT -->
+
+            <div class="earth-bottom-line"></div>
+
+
+        </section>
+
+
+        <!--
+            FUTURE HOMEPAGE SECTIONS WILL BE ADDED HERE.
+            FOR NOW, HEADER AND HERO ONLY.
+        -->
+
+
+    </main>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT FILES
+    =========================================== -->
+
+    <!-- MOBILE NAVIGATION -->
+
+    <script src="assets/js/main.js"></script>
+
+
+    <!-- THREE.JS EARTH ANIMATION -->
+
+    <script
+        type="module"
+        src="assets/js/earth.js">
+    </script>
+
+
+</body>
+
+</html>

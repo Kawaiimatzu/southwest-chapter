@@ -1,0 +1,143 @@
+
+/* ==========================================
+   SOUTHWEST CHAPTER EVENTS
+   PAGE-SPECIFIC STYLES ONLY
+========================================== */
+
+.events-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #f7f9fc;
+    overflow: hidden;
+}
+
+.events-heading {
+    padding: 45px 20px 30px;
+    text-align: center;
+    background: #071426;
+    color: #fff;
+}
+
+.events-heading .section-label {
+    display: block;
+    color: #a8ce48;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.events-heading h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.events-heading p {
+    color: #c4cfda;
+    font-size: 13px;
+}
+
+.events-container {
+    width: min(1200px, 96%);
+    height: 950px;
+    margin: 35px auto 60px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.07);
+}
+
+.events-frame {
+    display: block;
+    width: 100%;
+    height: 1300px;
+    border: 0;
+    margin-top: -430px;
+}
+
+.events-fallback {
+    display: none;
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+    .events-container {
+        width: 96%;
+        height: 440px;
+    }
+
+    .events-frame {
+        height: 1200px;
+        margin-top: -450px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+    .events-heading {
+        padding: 35px 15px 25px;
+    }
+
+    .events-heading h1 {
+        font-size: 28px;
+    }
+
+    .events-container {
+        width: 100%;
+        height: 720px;
+        margin: 20px auto 40px;
+        border-radius: 0;
+    }
+
+    .events-frame {
+        height: 1250px;
+        margin-top: -330px;
+    }
+}
+
+
+/* ==========================================
+   EVENTS PAGE TYPOGRAPHY
+   MATCH HOMEPAGE DESIGN
+========================================== */
+
+.events-page {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.events-heading {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.events-heading .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.events-heading h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.events-heading p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+/* Keep calendar container clean */
+
+.events-container {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .07);
+}
